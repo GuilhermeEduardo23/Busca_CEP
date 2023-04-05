@@ -1,2 +1,2 @@
-# Busca_CEP
-Uso da API Via CEP
+# WeatherApp
+Uso da API OpenWeather
