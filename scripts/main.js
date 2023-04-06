@@ -1,9 +1,51 @@
 const bodyWidth = document.querySelector(`body`).clientWidth,
     bodyHeight = document.querySelector(`body`).clientHeight,
-    inputSearch = document.getElementById(`input-search`),
-    btnSearch = document.getElementById(`search`);
-
-btnSearch.addEventListener(`click`, () => {
+    btnSearch = document.getElementById(`search`),
+    wallpaper = document.getElementById(`wallpaper`),
+    divResult = document.getElementById(`result`),
+    imgIconWeather = document.getElementById(`icon-weather`),
+    spanTemperature = document.getElementById(`temperature`),
+    API_KEY = `faf304ef7610279db0789696dbc57421`;
     
-    console.log(inputSearch);
+
+btnSearch.addEventListener(`click`, async (e) => {
+    e.preventDefault();
+
+    const inputSearch = document.getElementById(`input-search`).value,
+        URL_API = `https://api.openweathermap.org/data/2.5/weather?units=metric&lang=pt_br&q=${inputSearch}&appid=${API_KEY}`;
+
+    wallpaper.style = `
+        visibility: visible;
+    `;
+    
+    divResult.style = `
+        display: flex;
+    `;
+
+    await fetch(URL_API)
+
+    .then((response) => response.json())
+    .then((data) => {
+        if(inputSearch === ``) {
+            spanTemperature.innerText = `Favor, informar a cidade!`;
+            wallpaper.style = `
+                visibility: hidden;
+            `;
+            imgIconWeather.remove();
+            
+            return;
+        }
+
+        console.log(data);
+        imgIconWeather.setAttribute(`src`, `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`);
+        
+        imgIconWeather.setAttribute(`alt`, `${data.weather[0].main}`);
+        
+        spanTemperature.innerHTML = `${Math.trunc(data.main.temp)}ºC - ${data.weather[0].description}`;
+
+        wallpaper.setAttribute(`src`, `https://source.unsplash.com/${bodyWidth}x${bodyHeight}/?${data.weather[0].description}`);
+    })
+    .catch((error) => {
+        console.log(error);
+    });
 });

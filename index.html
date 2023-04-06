@@ -6,6 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./assets/styles/style.css">
+        <link rel="stylesheet" href="./assets/styles/responsive.css">
         <script src="./scripts/main.js" defer></script>
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
@@ -22,16 +23,27 @@
             </div>
 
             <div id="data">
-                <h1>Clima</h1>
+                <h1>
+                    Clima&nbsp;
+                    <img src="./assets/images/cloud.png" alt="Cloud">
+                </h1>
                 
                 <div id="div-input">
+                    <ion-icon name="navigate-outline"></ion-icon>
                     <input type="search" id="input-search" placeholder="Insira o nome da cidade" required>
                 </div>
 
-                <button id="search">Pesquisar <ion-icon name="location-outline"></ion-icon></button>
+                <button id="search">
+                    <ion-icon name="location-outline"></ion-icon>
+                    &nbsp;Pesquisar
+                </button>
 
-                <div id="result"></div>
+                <div id="result">
+                    <img src="" id="icon-weather" alt="">
+                    <span id="temperature"></span>
+                </div>
             </div>
+            
         </main>
     </body>
 </html>
