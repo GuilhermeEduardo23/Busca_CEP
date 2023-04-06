@@ -1,4 +1,10 @@
+@import url('./style.css');
+
 @media (max-width: 600px) {
+    body {
+        background-size: 100% 100%;
+    }
+    
     #container {
         width: 90%;
         border-radius: 10px;
