@@ -7,10 +7,31 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./assets/styles/style.css">
         <script src="./scripts/main.js" defer></script>
-        <title>Busca CEP</title>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
+        <link rel="shortcut icon" href="./assets/icons/partly-cloudy-day.png" type="image/x-icon">
+        <title>Clima</title>
     </head>
 
     <body>
+        <img src="" alt="Weather Condition" id="wallpaper">
         
+        <main id="container">
+            <div id="div-img">
+                <img src="./assets/images/Weather.png" alt="Weather Ilustration" id="weather-ilustration">
+            </div>
+
+            <div id="data">
+                <h1>Clima</h1>
+                
+                <div id="div-input">
+                    <input type="search" id="input-search" placeholder="Insira o nome da cidade" required>
+                </div>
+
+                <button id="search">Pesquisar <ion-icon name="location-outline"></ion-icon></button>
+
+                <div id="result"></div>
+            </div>
+        </main>
     </body>
 </html>
