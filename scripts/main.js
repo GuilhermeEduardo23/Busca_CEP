@@ -27,16 +27,19 @@ btnSearch.addEventListener(`click`, async (e) => {
     .then((response) => response.json())
     .then((data) => {
         if(inputSearch === ``) {
+            spanTemperature.style = `
+                text-transform: none;
+            `;
+    
             spanTemperature.innerText = `Favor, informar a cidade!`;
+            
             wallpaper.style = `
                 visibility: hidden;
             `;
-            imgIconWeather.remove();
-            
+    
             return;
         }
 
-        console.log(data);
         imgIconWeather.setAttribute(`src`, `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`);
         
         imgIconWeather.setAttribute(`alt`, `${data.weather[0].main}`);
