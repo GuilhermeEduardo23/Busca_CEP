@@ -27,10 +27,6 @@ btnSearch.addEventListener(`click`, async (e) => {
     .then((response) => response.json())
     .then((data) => {
         if(inputSearch === ``) {
-            spanTemperature.style = `
-                text-transform: none;
-            `;
-    
             spanTemperature.innerText = `Favor, informar a cidade!`;
             
             wallpaper.style = `
@@ -43,12 +39,17 @@ btnSearch.addEventListener(`click`, async (e) => {
         imgIconWeather.setAttribute(`src`, `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`);
         
         imgIconWeather.setAttribute(`alt`, `${data.weather[0].main}`);
-        
+            
         spanTemperature.innerHTML = `${Math.trunc(data.main.temp)}ºC - ${data.weather[0].description}`;
 
-        wallpaper.setAttribute(`src`, `https://source.unsplash.com/${bodyWidth}x${bodyHeight}/?sky`);
+        wallpaper.setAttribute(`src`, `https://source.unsplash.com/${bodyWidth}x${bodyHeight}/?${inputSearch}`);
     })
     .catch((error) => {
         console.log(error);
+        alert(error);
+
+        wallpaper.style = `
+                visibility: hidden;
+            `;
     });
 });
