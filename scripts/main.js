@@ -38,7 +38,7 @@ btnSearch.addEventListener(`click`, async (e) => {
 
         imgIconWeather.setAttribute(`src`, `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`);
         
-        imgIconWeather.setAttribute(`alt`, `${data.weather[0].main}`);
+        imgIconWeather.setAttribute(`alt`, `${inputSearch}`);
             
         spanTemperature.innerHTML = `${Math.trunc(data.main.temp)}ºC - ${data.weather[0].description}`;
 
