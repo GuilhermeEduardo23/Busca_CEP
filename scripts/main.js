@@ -42,7 +42,7 @@ btnSearch.addEventListener(`click`, async (e) => {
             
         spanTemperature.innerHTML = `${Math.trunc(data.main.temp)}ºC - ${data.weather[0].description}`;
 
-        wallpaper.setAttribute(`src`, `https://source.unsplash.com/${bodyWidth}x${bodyHeight}/?sky);
+        wallpaper.setAttribute(`src`, `https://source.unsplash.com/${bodyWidth}x${bodyHeight}/?sky`);
 
         wallpaper.setAttribute(`alt`, `${inputSearch}`);
     })
