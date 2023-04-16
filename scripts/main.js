@@ -5,7 +5,7 @@ const bodyWidth = document.querySelector(`body`).clientWidth,
     divResult = document.getElementById(`result`),
     imgIconWeather = document.getElementById(`icon-weather`),
     spanTemperature = document.getElementById(`temperature`),
-    API_KEY = `faf304ef7610279db0789696dbc57421`;
+    API_KEY = `Sua Key`;
     
 
 btnSearch.addEventListener(`click`, async (e) => {
